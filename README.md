@@ -8,10 +8,10 @@ Features:
  - Status Check
  - Response data check
  - Time Check
- - Pre-Post Script Running reaching class enviroment variables.
+ - Pre-Post Script Running reaching class environment variables.
 
 # ENV VARIABLES
-Assign enviroment variables with 
+Assign environment variables with 
 
 ```
  "assign_env": {
@@ -19,23 +19,23 @@ Assign enviroment variables with
  }
 ```
 
-Key:  which you want to assign. you can use this key in other test cases. (example: "usernmae"  use it like "$env_username")
+Key:  which you want to assign. you can use this key in other test cases. (example: "username"  use it like "$env_username")
 
 Value:  which you want to use from response data (example: user.username, users[0].username etc.)
 
 Note: 
 
- - For using enviroment variable in other test cases you can add $env_ prefix to your key.
- - You can use enviroment variables in body, headers, response body.
+ - For using environment variable in other test cases you can add $env_ prefix to your key.
+ - You can use environment variables in body, headers, response body.
 
 
-## Pre Defined enviroment variables
+## Pre Defined environment variables
 
-These enviroment variables directly assigned to ENV_VARIABLES for future usage.
+These environment variables directly assigned to ENV_VARIABLES for future usage.
 
 ```
 "pre_defined_env": {
-    "a: "b"
+    "a": "b"
 }
 ```
 

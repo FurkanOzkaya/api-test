@@ -45,16 +45,17 @@ class ApiTest {
         let value: any
         for ([key, value] of Object.entries(body)) {
             if (value.includes(LOWER_CONSTANT) && value.includes(RANDOM_CONSTANT)) {
-                value = value.split(LOWER_CONSTANT)[0]
-                value = value.split(RANDOM_CONSTANT)[1]
-                console.log("value==> ", value)
-                let temp: any = generateRandom(value)
+                // Extract the random type from value like "$random_username__lower"
+                let randomType = value.split(RANDOM_CONSTANT)[1].split(LOWER_CONSTANT)[0];
+                console.log("value==> ", randomType)
+                let temp: any = generateRandom(randomType)
                 console.log("generated random ==> ", temp)
                 body[key] = temp.toLowerCase()
             }
             else if (value.includes(RANDOM_CONSTANT)) {
-                value = value.split(RANDOM_CONSTANT)[1]
-                body[key] = generateRandom(value)
+                // Extract the random type from value like "$random_username"
+                let randomType = value.split(RANDOM_CONSTANT)[1];
+                body[key] = generateRandom(randomType)
             }
 
         }

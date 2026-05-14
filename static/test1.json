@@ -1,0 +1,38 @@
+{
+    "base_url": "http://127.0.0.1:9000/api/",
+    "tests": [
+        {
+            "name": "Create User Success",
+            "path": "user/",
+            "type": "post",
+            "headers": {},
+            "body": {
+                "username": "$random_username__lower",
+                "password": "$random_password",
+                "email": "$random_email"
+            },
+            "response": {
+                "status_check": true,
+                "body_check": true,
+                "time_check": true,
+                "body_check_type": "field",
+                "status": 201,
+                "body": {},
+                "time_below": 200
+            },
+            "pre_defined_env": {
+                "a": "b"
+            },
+            "assign_env": {
+                "user_id": "id",
+                "username": "username",
+                "email": "email",
+                "password": "password"
+            },
+            "pre_function": "",
+            "post_function": "",
+            "pre_script": "",
+            "post_script": ""
+        }
+    ]
+}
